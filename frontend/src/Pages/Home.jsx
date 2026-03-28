@@ -7,12 +7,14 @@ import aboutImg from "/src/Image/about.jpg";
 import { CheckCircle } from "lucide-react";
 import { steps } from "../data/data";
 import { Link } from "react-router-dom";
+import TeamIntro from "../components/TeamIntro";
 
 
 const Home = () => {
   return (
     <>
       <Hero />
+      <TeamIntro />
       <Stats />
 
       {/* About Intro */}
@@ -52,7 +54,7 @@ const Home = () => {
             </span>
 
             {/* Heading */}
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-4 leading-snug">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mt-4 leading-snug">
               Compassionate care to provide <br />
               the quality{" "}
               <span className="text-teal-500 underline">
