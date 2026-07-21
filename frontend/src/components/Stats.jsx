@@ -9,13 +9,13 @@ const stats = [
     color: "bg-teal-500",
   },
   {
-    end: 5,
+    end: 7,
     suffix: "+",
     label: "Operated Clinics",
     color: "bg-yellow-400",
   },
   {
-    end: 15,
+    end: 20,
     suffix: "K+",
     label: "Patients Treated",
     color: "bg-gray-900",
@@ -23,7 +23,7 @@ const stats = [
   {
     end: 6,
     suffix: "+",
-    label: "Cardiology Services",
+    label: "Vision Care Services",
     color: "bg-orange-400",
   },
 ];

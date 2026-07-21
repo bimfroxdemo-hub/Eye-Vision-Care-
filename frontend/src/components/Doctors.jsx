@@ -15,7 +15,7 @@ const Doctors = ({ doctorsDetails }) => {
           </h2>
 
           <h3 className="text-3xl md:text-4xl font-bold mt-2 bg-gradient-to-r from-teal-500 to-green-400 bg-clip-text text-gradient">
-            Expert Doctors
+            Expert Optometrist
           </h3>
         </div>
 

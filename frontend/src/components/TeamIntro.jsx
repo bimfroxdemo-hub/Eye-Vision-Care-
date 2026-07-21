@@ -40,7 +40,7 @@ export default function TeamIntro() {
                             transition={{ delay: 0.2 }}
                             className="text-lg text-gray-600 mb-8 leading-relaxed"
                         >
-                            Our multidisciplinary team of board-certified ophthalmologists, specialized optometrists, and master opticians work collaboratively to provide comprehensive, personalized care for every patient that walks through our doors.
+                            Our eye vision care team of optometrist and expert sales staff work to provide comprehensive eye care to every patient that walks to our vision care clinic.
                         </motion.p>
 
                         <motion.div

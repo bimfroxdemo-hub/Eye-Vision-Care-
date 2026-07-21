@@ -3,7 +3,7 @@ import Stats from "../components/Stats";
 import FeatureStrip from "../components/FeatureStrip";
 import Appointment from "../components/Appointment";
 import FAQ from "../components/FAQ";
-import aboutImg from "/src/Image/about.jpg";
+import aboutImg from "/src/Image/about.jpeg";
 import { CheckCircle } from "lucide-react";
 import { steps } from "../data/data";
 import { Link } from "react-router-dom";
@@ -58,7 +58,7 @@ const Home = () => {
               Compassionate care to provide <br />
               the quality{" "}
               <span className="text-teal-500 underline">
-                eye care services.
+                Eye Vision Checkup services.
               </span>
             </h2>
 
@@ -79,7 +79,7 @@ const Home = () => {
                   Mission
                 </h4>
                 <p className="text-gray-500 text-sm">
-                  To deliver advanced, compassionate eye care using innovative technologies.
+                  To deliver advanced, compassionate eye care using Latest technologies.
                 </p>
               </div>
 

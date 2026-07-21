@@ -3,14 +3,14 @@ import { Plus, Minus } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 // Images (replace with your own)
-import img1 from "/src/Image/faq1.jpg";
-import img2 from "/src/Image/faq2.jpg";
+import img1 from "/src/Image/faq1.jpeg";
+import img2 from "/src/Image/faq2.jpeg";
 
 const faqs = [
   {
-    question: "What age group do you provide care for?",
+    question: "What age group do you provide eye care for?",
     answer:
-      "We provide comprehensive eye care for all age groups, from infants to seniors.",
+      "We provide eye care services for all age groups, from children to senior citizens.",
   },
   {
     question: "Can I book an online consultation?",
@@ -18,9 +18,9 @@ const faqs = [
       "Yes, online consultations are available for follow-ups and initial screenings.",
   },
   {
-    question: "Do you offer vaccinations at your clinic?",
+    question: "Can I book an online consultation?",
     answer:
-      "Yes, we offer selected preventive care services and consultations.",
+      "Yes, we offer complete eye checkups including power testing and vision analysis.",
   },
   {
     question: "How often should I get my eyes checked?",
@@ -130,4 +130,4 @@ const FAQ = () => {
   );
 };
 
-export default FAQ;
+export default FAQ;

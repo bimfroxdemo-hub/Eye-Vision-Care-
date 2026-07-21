@@ -79,7 +79,7 @@ export default function contactForm() {
                                 </div>
                                 <div>
                                     <p className="text-sm text-white/60 uppercase tracking-wider">Call Us Directly</p>
-                                    <p className="text-xl font-semibold">+91 9763534348</p>
+                                    <p className="text-xl font-semibold">+91 9763534348   <br />+91 9167133049</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-4 text-white">

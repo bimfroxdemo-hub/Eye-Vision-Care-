@@ -21,13 +21,13 @@ const Footer = () => {
           <img src={logo} alt="logo" className="h-12 mb-4" />
 
           <p className="text-gray-400 text-sm leading-relaxed">
-            We are a dedicated Eye Care and Vision Health Center committed to providing advanced, compassionate, and personalized treatment.
+           We are dedicated to provide excellent vision care services.
           </p>
 
           <div className="mt-6 bg-teal-900/30 p-4 rounded-lg">
             <p className="text-teal-400 font-semibold">We Are Available !!</p>
             <p className="text-gray-300 text-sm mt-1">
-              Monday - Friday : 9:00 AM to 10:00 PM
+              Monday - Sunday : 9:00 AM to 10:00 PM
             </p>
           </div>
         </div>
@@ -63,25 +63,23 @@ const Footer = () => {
           <div className="space-y-4 text-gray-400 text-sm">
 
             <p>📍 Shop No. 26, Omkar Plaza, Bhestan, Surat</p>
-            <p>📧 [EMAIL_ADDRESS]</p>
-            <p>📞 +91 9763534348 </p>
+            <p>📧 eyevisioncaree@gmail.com</p>
+            <p>📞 +91 9763534348  <br />📞 +91 9167133049</p>
 
           </div>
 
           {/* Social Icons */}
           <div className="mt-5 flex items-center gap-4">
-            <a className="hover:text-[#C68A2A] transition" href="#">
+            <a className="hover:text-[#C68A2A] transition" href="https://www.facebook.com/share/17q1nhah7T/?mibextid=wwXIfr">
               <FaFacebookF size={20} />
             </a>
-            <a className="hover:text-[#C68A2A] transition" href="#">
+            <a className="hover:text-[#C68A2A] transition" href="https://www.instagram.com/eyevisioncareofficial?igsh=MTZoOTNxOHFyZGZvYw%3D%3D&utm_source=qr">
               <FaInstagram size={20} />
             </a>
-            <a className="hover:text-[#C68A2A] transition" href="#">
+            <a className="hover:text-[#C68A2A] transition" href="https://www.youtube.com/@EyeVisioncare-j9g">
               <FaYoutube size={20} />
             </a>
-            <a className="hover:text-[#C68A2A] transition" href="#">
-              <FaLinkedinIn size={20} />
-            </a>
+            
           </div>
         </div>
 
@@ -89,7 +87,7 @@ const Footer = () => {
 
       {/* Bottom */}
       <div className="mt-10 border-t border-gray-800 pt-4 text-center text-gray-500 text-sm relative z-10">
-        © {year} EyeVisionCare. All Rights Reserved
+        © {year} EyeVisionCare. All Rights Reserved | Designed by <a href="https://bimfrox.com" target="_blank" rel="noopener noreferrer" className="text-teal-400 hover:text-teal-300">Bimfrox</a>
       </div>
 
     </footer>

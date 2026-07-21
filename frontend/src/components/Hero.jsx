@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   const items = [
-    "Laser-Assisted Surgeries",
-    "Sterile & Safe Surgical Environment",
-    "Advanced Retina Care",
-    "24/7 Emergency Eye Services",
-    "Experienced Eye Specialists",
+    "EYE VISION CARE ",
+    "Comprehensive Eye Exams",
+    "Cataract Surgery",
+    "Dry Eye Treatment",
+    "Optical Boutique",
   ];
 
   return (

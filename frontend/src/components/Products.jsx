@@ -88,12 +88,6 @@ export default function Products({ products }) {
                                     {product.description}
                                 </p>
 
-                                <div className="flex items-center justify-between mt-auto relative z-10 pt-4 border-t border-navy/5">
-                                    <span className="text-navy font-bold">{product.price}</span>
-                                    <button className="w-10 h-10 rounded-full bg-offwhite flex items-center justify-center text-navy group-hover:bg-teal group-hover:text-white transition-colors duration-300 shadow-sm">
-                                        <ShoppingBag size={18} />
-                                    </button>
-                                </div>
                             </div>
                         </motion.div>
                     ))}

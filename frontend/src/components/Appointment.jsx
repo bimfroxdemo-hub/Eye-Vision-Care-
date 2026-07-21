@@ -1,6 +1,6 @@
 
 // Image
-import eyeImg from "/src/Image/eye-care.jpg";
+import eyeImg from "/src/Image/eyecheckup.jpeg";
 
 
 const Appointment = ({ steps }) => {
@@ -21,7 +21,7 @@ const Appointment = ({ steps }) => {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-4 leading-snug">
               How to Book Your <br />
               <span className="text-teal-500 underline">
-                Eye Care Appointment
+                Eye Vision Test  Appointment
               </span>
             </h2>
           </div>
