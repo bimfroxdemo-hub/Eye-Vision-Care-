@@ -21,7 +21,7 @@ import Glaucoma from "/src/Image/glaucoma.jpeg";
 import Optical  from "/src/Image/Optical.jpeg";
 import Laser from "/src/Image/laser.jpeg";
 import Comprehensive from "/src/Image/Comprehensive.jpeg";
-import Cataract from "../Image/cataract.jpeg";
+import Cataract from "../Image/Cataract.jpeg";
 import lence from "/src/Image/lence.jpg";
 import Specialty from "/src/Image/specialty.jpg";
 import wating from "/src/Image/waitng.jpeg";
