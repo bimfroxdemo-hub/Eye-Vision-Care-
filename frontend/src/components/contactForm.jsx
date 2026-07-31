@@ -1,202 +1,319 @@
-import { useState } from 'react';
-import { motion } from 'motion/react';
-import { Calendar, Clock, User, Phone, ArrowRight } from 'lucide-react';
+import { useState } from "react";
+import { motion } from "motion/react";
+import {
+  Calendar,
+  Clock,
+  User,
+  Phone,
+  ArrowRight,
+  MessageCircle,
+} from "lucide-react";
 
-export default function contactForm() {
-    const [formData, setFormData] = useState({
-        fullName: '',
-        phone: '',
-        date: '',
-        service: 'Comprehensive Exam'
+export default function ContactForm() {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    phone: "",
+    date: "",
+    service: "Comprehensive Exam",
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData((previousData) => ({
+      ...previousData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const { fullName, phone, date, service } = formData;
+
+    if (!fullName.trim() || !phone.trim() || !date) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
+    const cleanPhone = phone.replace(/\D/g, "");
+
+    if (cleanPhone.length < 10) {
+      alert("Please enter a valid phone number.");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    const formattedDate = new Date(date).toLocaleDateString("en-IN", {
+      day: "2-digit",
+      month: "long",
+      year: "numeric",
     });
 
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
+    const message = `
+*New Appointment Request* 🗓️
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const { fullName, phone, date, service } = formData;
+*Patient Name:* ${fullName}
+*Patient Phone:* ${phone}
+*Preferred Date:* ${formattedDate}
+*Service Required:* ${service}
 
-        if (!fullName || !phone || !date) {
-            alert("Please fill in all required fields.");
-            return;
-        }
+Please contact the patient for confirmation.
+    `.trim();
 
-        const message = `*New Appointment Request* 🗓️\n\n*Name:* ${fullName}\n*Phone:* ${phone}\n*Preferred Date:* ${date}\n*Service Required:* ${service}`;
-        const whatsappUrl = `https://wa.me/919763534348?text=${encodeURIComponent(message)}`;
-        window.open(whatsappUrl, '_blank');
-    };
+    // Eye Vision Care ka WhatsApp number
+    const clinicWhatsAppNumber = "919763534348";
 
-    return (
-        <section id="contact" className="py-24 bg-offwhite relative z-20">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="bg-white rounded-[3rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row border border-navy/5">
+    const whatsappUrl = `https://wa.me/${clinicWhatsAppNumber}?text=${encodeURIComponent(
+      message
+    )}`;
 
-                    {/* Left Side - Image & Info */}
-                    <div className="lg:w-5/12 bg-navy relative overflow-hidden p-12 flex flex-col justify-between">
-                        {/* Background Image with Overlay */}
-                        <div className="absolute inset-0 z-0">
-                            <img
-                                src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1480&auto=format&fit=crop"
-                                alt="Clinic Interior"
-                                className="w-full h-full object-cover opacity-30 mix-blend-overlay"
-                                referrerPolicy="no-referrer"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-br from-navy/90 to-teal/80"></div>
-                        </div>
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
 
-                        <div className="relative z-10">
-                            <motion.h3
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                className="text-3xl md:text-4xl font-extrabold text-white mb-4"
-                            >
-                                Ready for Clearer Vision?
-                            </motion.h3>
-                            <motion.p
-                                initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.1 }}
-                                className="text-white/80 mb-8 max-w-md"
-                            >
-                                Schedule your comprehensive eye exam today. Our specialists are ready to provide you with personalized, medical-grade care.
-                            </motion.p>
-                        </div>
+    setFormData({
+      fullName: "",
+      phone: "",
+      date: "",
+      service: "Comprehensive Exam",
+    });
 
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.2 }}
-                            className="relative z-10 space-y-6"
-                        >
-                            <div className="flex items-center gap-4 text-white">
-                                <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-md border border-white/20">
-                                    <Phone size={20} className="text-teal" />
-                                </div>
-                                <div>
-                                    <p className="text-sm text-white/60 uppercase tracking-wider">Call Us Directly</p>
-                                    <p className="text-xl font-semibold">+91 9763534348   <br />+91 9167133049</p>
-                                </div>
-                            </div>
-                            <div className="flex items-center gap-4 text-white">
-                                <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-md border border-white/20">
-                                    <Clock size={20} className="text-teal" />
-                                </div>
-                                <div>
-                                    <p className="text-sm text-white/60 uppercase tracking-wider">Working Hours</p>
-                                    <p className="text-lg font-medium">Mon - Fri: 9:00 AM - 10:00 PM</p>
-                                </div>
-                            </div>
-                        </motion.div>
-                    </div>
+    setIsSubmitting(false);
+  };
 
-                    {/* Right Side - Form */}
-                    <div className="lg:w-7/12 p-12 md:p-16 bg-white relative">
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-teal/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+  // Aaj se pehle ki date select na ho
+  const today = new Date().toISOString().split("T")[0];
 
-                        <motion.form
-                            onSubmit={handleSubmit}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="relative z-10 space-y-6"
-                        >
-                            <h4 className="text-2xl font-extrabold text-navy mb-8">Schedule a Visit</h4>
+  return (
+    <section
+      id="contact"
+      className="relative w-full overflow-hidden bg-gradient-to-br from-slate-50 via-white to-teal-50/30 py-16 sm:py-20 md:py-24"
+    >
+      {/* Background Effects */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -left-24 bottom-0 h-80 w-80 rounded-full bg-teal-200/30 blur-3xl" />
+        <div className="absolute -right-24 top-0 h-80 w-80 rounded-full bg-yellow-200/30 blur-3xl" />
+      </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div className="space-y-2">
-                                    <label className="text-sm font-medium text-navy/70 ml-1">Full Name</label>
-                                    <div className="relative">
-                                        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-navy/40">
-                                            <User size={18} />
-                                        </div>
-                                        <input
-                                            type="text"
-                                            name="fullName"
-                                            value={formData.fullName}
-                                            onChange={handleChange}
-                                            className="w-full pl-11 pr-4 py-3 bg-offwhite border border-navy/10 rounded-xl focus:ring-2 focus:ring-teal/50 focus:border-teal outline-none transition-all"
-                                            placeholder="John Doe"
-                                            required
-                                        />
-                                    </div>
-                                </div>
+      <div className="relative z-10 mx-auto w-[92%] max-w-7xl sm:w-[88%]">
+        <div className="grid overflow-hidden rounded-[2rem] border border-white bg-white shadow-2xl lg:grid-cols-12 lg:rounded-[3rem]">
+          
+          {/* LEFT INFO */}
+          <div className="relative overflow-hidden bg-slate-900 p-7 text-white sm:p-10 md:p-14 lg:col-span-5">
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-teal-950 to-teal-800" />
 
-                                <div className="space-y-2">
-                                    <label className="text-sm font-medium text-navy/70 ml-1">Phone Number</label>
-                                    <div className="relative">
-                                        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-navy/40">
-                                            <Phone size={18} />
-                                        </div>
-                                        <input
-                                            type="tel"
-                                            name="phone"
-                                            value={formData.phone}
-                                            onChange={handleChange}
-                                            className="w-full pl-11 pr-4 py-3 bg-offwhite border border-navy/10 rounded-xl focus:ring-2 focus:ring-teal/50 focus:border-teal outline-none transition-all"
-                                            placeholder="+91 0000000000"
-                                            required
-                                        />
-                                    </div>
-                                </div>
+            <div className="relative z-10">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-wider text-teal-200 backdrop-blur-sm">
+                <MessageCircle size={16} />
+                WhatsApp Appointment
+              </div>
 
-                                <div className="space-y-2">
-                                    <label className="text-sm font-medium text-navy/70 ml-1">Preferred Date</label>
-                                    <div className="relative">
-                                        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-navy/40">
-                                            <Calendar size={18} />
-                                        </div>
-                                        <input
-                                            type="date"
-                                            name="date"
-                                            value={formData.date}
-                                            onChange={handleChange}
-                                            className="w-full pl-11 pr-4 py-3 bg-offwhite border border-navy/10 rounded-xl focus:ring-2 focus:ring-teal/50 focus:border-teal outline-none transition-all text-navy/80"
-                                            required
-                                        />
-                                    </div>
-                                </div>
+              <motion.h2
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="text-3xl font-black leading-tight sm:text-4xl"
+              >
+                Ready for
+                <span className="block text-teal-300">
+                  Clearer Vision?
+                </span>
+              </motion.h2>
 
-                                <div className="space-y-2">
-                                    <label className="text-sm font-medium text-navy/70 ml-1">Service Required</label>
-                                    <select
-                                        name="service"
-                                        value={formData.service}
-                                        onChange={handleChange}
-                                        className="w-full px-4 py-3 bg-offwhite border border-navy/10 rounded-xl focus:ring-2 focus:ring-teal/50 focus:border-teal outline-none transition-all text-navy/80 appearance-none"
-                                    >
-                                        <option>Comprehensive Exam</option>
-                                        <option>LASIK Consultation</option>
-                                        <option>Cataract Evaluation</option>
-                                        <option>Dry Eye Treatment</option>
-                                        <option>Other</option>
-                                    </select>
-                                </div>
-                            </div>
+              <p className="mt-5 text-sm leading-relaxed text-gray-300 sm:text-base">
+                Form submit karte hi aapki appointment request hamare WhatsApp
+                par send ho jayegi. Hamari team aapse jaldi contact karegi.
+              </p>
 
-                            <div className="pt-4">
-                                <button
-                                    type="submit"
-                                    className="w-full group relative px-8 py-4 bg-navy text-white font-semibold rounded-xl overflow-hidden transition-all hover:shadow-[0_10px_30px_rgba(15,23,42,0.2)]"
-                                >
-                                    <span className="relative z-10 flex items-center justify-center gap-2">
-                                        Confirm Appointment
-                                        <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                                    </span>
-                                    <div className="absolute inset-0 bg-teal translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
-                                </button>
-                            </div>
-                            <p className="text-xs text-center text-navy/50 mt-4">
-                                By submitting this form, you agree to our privacy policy and terms of service.
-                            </p>
-                        </motion.form>
-                    </div>
+              <div className="mt-10 space-y-6">
+                <a
+                  href="tel:+919763534348"
+                  className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/10 p-4 transition hover:bg-white/20"
+                >
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-teal-500">
+                    <Phone size={19} />
+                  </div>
+
+                  <div>
+                    <p className="text-xs uppercase tracking-wider text-gray-400">
+                      Call Us
+                    </p>
+                    <p className="mt-1 font-semibold">+91 9763534348</p>
+                    <p className="font-semibold">+91 9167133049</p>
+                  </div>
+                </a>
+
+                <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/10 p-4">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-yellow-500 text-slate-900">
+                    <Clock size={19} />
+                  </div>
+
+                  <div>
+                    <p className="text-xs uppercase tracking-wider text-gray-400">
+                      Working Hours
+                    </p>
+                    <p className="mt-1 font-semibold">
+                      Monday - Sunday
+                    </p>
+                    <p className="text-sm text-gray-300">
+                      9:00 AM - 10:00 PM
+                    </p>
+                  </div>
                 </div>
+              </div>
             </div>
-        </section>
-    );
+          </div>
+
+          {/* FORM */}
+          <div className="p-7 sm:p-10 md:p-14 lg:col-span-7">
+            <motion.form
+              onSubmit={handleSubmit}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <div>
+                <p className="text-sm font-bold uppercase tracking-wider text-teal-600">
+                  Book an Appointment
+                </p>
+
+                <h3 className="mt-2 text-3xl font-black text-slate-900">
+                  Schedule Your Visit
+                </h3>
+
+                <p className="mt-2 text-sm text-gray-500">
+                  Apni details fill karein aur WhatsApp par appointment request
+                  send karein.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+                {/* Name */}
+                <div>
+                  <label className="mb-2 block text-sm font-semibold text-slate-700">
+                    Full Name *
+                  </label>
+
+                  <div className="relative">
+                    <User
+                      size={18}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+                    />
+
+                    <input
+                      type="text"
+                      name="fullName"
+                      value={formData.fullName}
+                      onChange={handleChange}
+                      placeholder="Enter your full name"
+                      className="w-full rounded-xl border border-gray-200 bg-slate-50 py-3.5 pl-11 pr-4 text-sm outline-none transition focus:border-teal-500 focus:bg-white focus:ring-4 focus:ring-teal-500/10"
+                      required
+                    />
+                  </div>
+                </div>
+
+                {/* Phone */}
+                <div>
+                  <label className="mb-2 block text-sm font-semibold text-slate-700">
+                    Phone Number *
+                  </label>
+
+                  <div className="relative">
+                    <Phone
+                      size={18}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+                    />
+
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="+91 0000000000"
+                      pattern="[0-9+\s-]{10,}"
+                      className="w-full rounded-xl border border-gray-200 bg-slate-50 py-3.5 pl-11 pr-4 text-sm outline-none transition focus:border-teal-500 focus:bg-white focus:ring-4 focus:ring-teal-500/10"
+                      required
+                    />
+                  </div>
+                </div>
+
+                {/* Date */}
+                <div>
+                  <label className="mb-2 block text-sm font-semibold text-slate-700">
+                    Preferred Date *
+                  </label>
+
+                  <div className="relative">
+                    <Calendar
+                      size={18}
+                      className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+                    />
+
+                    <input
+                      type="date"
+                      name="date"
+                      value={formData.date}
+                      min={today}
+                      onChange={handleChange}
+                      className="w-full rounded-xl border border-gray-200 bg-slate-50 py-3.5 pl-11 pr-4 text-sm text-slate-700 outline-none transition focus:border-teal-500 focus:bg-white focus:ring-4 focus:ring-teal-500/10"
+                      required
+                    />
+                  </div>
+                </div>
+
+                {/* Service */}
+                <div>
+                  <label className="mb-2 block text-sm font-semibold text-slate-700">
+                    Service Required
+                  </label>
+
+                  <select
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    className="w-full appearance-none rounded-xl border border-gray-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-700 outline-none transition focus:border-teal-500 focus:bg-white focus:ring-4 focus:ring-teal-500/10"
+                  >
+                    <option>Comprehensive Exam</option>
+                    <option>Eye Power Checkup</option>
+                    <option>Contact Lens Consultation</option>
+                    <option>Cataract Evaluation</option>
+                    <option>Dry Eye Treatment</option>
+                    <option>Optical Consultation</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="group flex w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-teal-500 to-emerald-600 px-6 py-4 font-bold text-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                <MessageCircle size={19} />
+
+                {isSubmitting
+                  ? "Opening WhatsApp..."
+                  : "Send Appointment on WhatsApp"}
+
+                {!isSubmitting && (
+                  <ArrowRight
+                    size={19}
+                    className="transition-transform group-hover:translate-x-1"
+                  />
+                )}
+              </button>
+
+              <p className="text-center text-xs leading-relaxed text-gray-500">
+                Submit karne ke baad WhatsApp open hoga aur message automatically
+                prepare ho jayega. Aapko sirf send button press karna hoga.
+              </p>
+            </motion.form>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
