@@ -21,7 +21,7 @@ import Glaucoma from "/src/Image/glaucoma.jpeg";
 import Optical  from "/src/Image/Optical.jpeg";
 import Laser from "/src/Image/laser.jpeg";
 import Comprehensive from "/src/Image/Comprehensive.jpeg";
-import Cataract from "/src/Image/cataract.jpeg";
+import Cataract from "../Image/cataract.jpeg";
 import lence from "/src/Image/lence.jpg";
 import Specialty from "/src/Image/specialty.jpg";
 import wating from "/src/Image/waitng.jpeg";
@@ -167,7 +167,7 @@ export const products = [
         category: "Specialty Lenses",
         name: "BlueShield Digital",
         description: "Precision-crafted lenses designed to filter harmful blue light and reduce digital eye strain.",
-        image: specialty,
+        image: s    Specialty,
         rating: 5.0
     }
 ];
