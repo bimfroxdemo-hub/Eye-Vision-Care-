@@ -1,32 +1,32 @@
 import { Eye, Droplet, Microscope, Zap, ScanFace, Glasses } from 'lucide-react';
 import { ClipboardPlus, User, Calendar, CheckCircle } from "lucide-react";
-import shop01 from "/src/Image/stores/Omkar’s plaza.jpg";
-import shop02 from "/src/Image/stores/Unn hospital.jpg";
-import shop03 from "/src/Image/stores/Sachin paligav.jpg";
-import shop04 from "/src/Image/stores/Pandesara.jpg";
-import shop05 from "/src/Image/stores/store5.jpeg";
-import shop07 from "/src/Image/stores/stores7.jpeg";
+import shop01 from "../Image/stores/Omkar’s plaza.jpg";
+import shop02 from "../Image/stores/Unn hospital.jpg";
+import shop03 from "../Image/stores/Sachin paligav.jpg";
+import shop04 from "../Image/stores/Pandesara.jpg";
+import shop05 from "../Image/stores/store5.jpeg";
+import shop07 from "../Image/stores/stores7.jpeg";
 
-import doct01 from "/src/Image/doctor/doct01.jpeg";
-import doct02 from "/src/Image/doctor/doct02.jpeg";
-import doct03 from "/src/Image/doctor/doct03.JPG";
-import doct04 from "/src/Image/doctor/doct04.jpeg";    
-import doct05 from "/src/Image/doctor/doct05.jpeg";
-import doct06 from "/src/Image/doctor/doct06.jpeg";
-import doct07 from "/src/Image/doctor/doct07.jpeg";
-import doct08 from "/src/Image/doctor/doct08.jpeg";
+import doct01 from "../Image/doctor/doct01.jpeg";
+import doct02 from "../Image/doctor/doct02.jpeg";
+import doct03 from "../Image/doctor/doct03.JPG";
+import doct04 from "../Image/doctor/doct04.jpeg";    
+import doct05 from "../Image/doctor/doct05.jpeg";
+import doct06 from "../Image/doctor/doct06.jpeg";
+import doct07 from "../Image/doctor/doct07.jpeg";
+import doct08 from "../Image/doctor/doct08.jpeg";
 
-import dryeye from "/src/Image/deyeye.jpg";
-import Glaucoma from "/src/Image/glaucoma.jpeg";
-import Optical  from "/src/Image/Optical.jpeg";
-import Laser from "/src/Image/laser.jpeg";
-import Comprehensive from "/src/Image/Comprehensive.jpeg";
+import dryeye from "../Image/deyeye.jpg";
+import Glaucoma from "../Image/glaucoma.jpeg";
+import Optical  from "../Image/Optical.jpeg";
+import Laser from "../Image/laser.jpeg";
+import Comprehensive from "../Image/Comprehensive.jpeg";
 import Cataract from "../Image/Cataract.jpeg";
-import lence from "/src/Image/lence.jpg";
-import Specialty from "/src/Image/specialty.jpg";
-import wating from "/src/Image/waitng.jpeg";
-import faq1 from "/src/Image/faq1.jpeg";
-import Sterile from "/src/Image/sterile.jpeg";
+import lence from "../Image/lence.jpg";
+import Specialty from "../Image/Specialty.jpg";
+import wating from "../Image/waitng.jpeg";
+import faq1 from "../Image/faq1.jpeg";
+import Sterile from "../Image/Sterile.jpeg";
 
 export const doctorsDetails = [
     {

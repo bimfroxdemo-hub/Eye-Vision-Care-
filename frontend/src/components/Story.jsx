@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { Quote, Heart, Sparkles, Calendar, ShieldCheck } from "lucide-react";
-import founder from "/src/Image/founder.jpeg";
+import founder from "../Image/founder.jpeg";
 
 export default function Story() {
   return (

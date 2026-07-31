@@ -3,7 +3,7 @@ import Stats from "../components/Stats";
 import FeatureStrip from "../components/FeatureStrip";
 import Appointment from "../components/Appointment";
 import FAQ from "../components/FAQ";
-import aboutImg from "/src/Image/about.jpeg";
+import aboutImg from "../Image/about.jpeg";
 import { CheckCircle, Eye, Award, Users, ArrowRight, Star, Shield, Heart } from "lucide-react";
 import { steps } from "../data/data";
 import { Link } from "react-router-dom";

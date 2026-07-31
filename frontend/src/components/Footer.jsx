@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "/src/Image/logo2.png";
+import logo from "../Image/logo2.png";
 import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";

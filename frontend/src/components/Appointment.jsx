@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
-import eyeImg from "/src/Image/eyecheckup.jpeg";
+import eyeImg from "../Image/eyecheckup.jpeg";
 
 const Appointment = ({ steps }) => {
   return (

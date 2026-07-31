@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import heroImg from "/src/Image/heroimg.png";
+import heroImg from "../Image/heroimg.png";
 import { Eye, Star, Users, Award, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 

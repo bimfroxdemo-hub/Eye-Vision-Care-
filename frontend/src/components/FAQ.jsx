@@ -3,8 +3,8 @@ import { Plus, Minus, HelpCircle, Star, CheckCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Images (replace with your own)
-import img1 from "/src/Image/faq1.jpeg";
-import img2 from "/src/Image/faq2.jpeg";
+import img1 from "../Image/faq1.jpeg";
+import img2 from "../Image/faq2.jpeg";
 
 const faqs = [
   {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "/src/Image/logo.png";
+import logo from "../Image/logo.png";
 import { Menu, X, Phone, Eye, ChevronRight, MapPin, Clock, ArrowRight } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
