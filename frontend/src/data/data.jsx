@@ -18,7 +18,7 @@ import doct08 from "/src/Image/doctor/doct08.jpeg";
 
 import dryeye from "/src/Image/deyeye.jpg";
 import Glaucoma from "/src/Image/glaucoma.jpeg";
-import Optical  from "/src/Image/optical.jpeg";
+import Optical  from "/src/Image/Optical.jpeg";
 import Laser from "/src/Image/laser.jpeg";
 import Comprehensive from "/src/Image/Comprehensive.jpeg";
 import Cataract from "/src/Image/cataract.jpeg";
