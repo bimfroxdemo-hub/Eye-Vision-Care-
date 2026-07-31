@@ -9,7 +9,7 @@ import shop07 from "/src/Image/stores/stores7.jpeg";
 
 import doct01 from "/src/Image/doctor/doct01.jpeg";
 import doct02 from "/src/Image/doctor/doct02.jpeg";
-import doct03 from "/src/Image/doctor/doct03.jpg";
+import doct03 from "/src/Image/doctor/doct03.JPG";
 import doct04 from "/src/Image/doctor/doct04.jpeg";    
 import doct05 from "/src/Image/doctor/doct05.jpeg";
 import doct06 from "/src/Image/doctor/doct06.jpeg";
