@@ -167,7 +167,7 @@ export const products = [
         category: "Specialty Lenses",
         name: "BlueShield Digital",
         description: "Precision-crafted lenses designed to filter harmful blue light and reduce digital eye strain.",
-        image: s    Specialty,
+        image: Specialty,
         rating: 5.0
     }
 ];
