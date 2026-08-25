@@ -8,6 +8,7 @@ import { CheckCircle, Eye, Award, Users, ArrowRight, Star, Shield, Heart } from 
 import { steps } from "../data/data";
 import { Link } from "react-router-dom";
 import TeamIntro from "../components/TeamIntro";
+import Seo from "../components/Seo";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
