@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import Seo from "./Seo";
 import {
   Eye,
   ChevronDown,
@@ -825,6 +826,13 @@ const BottomCTA = () => {
 const EyeKnowledge = () => {
   return (
     <>
+      <Seo
+        title="Eye Education & Vision Health Tips | Eye Vision Care"
+        description="Learn about eye anatomy, vision health, common eye conditions, and practical eye care tips from Eye Vision Care serving Surat, Vesu, Bhestan, Aarni, and nearby areas."
+        keywords="eye education, eye health tips, eye anatomy, vision care guide, eye knowledge Surat, common eye conditions, eye care in Bhestan"
+        url="https://eyevissioncare.in/eye-knowledge"
+        image="/fevicon.png"
+      />
       <EyeHero />
       <EyeAnatomy />
       <HowVisionWorks />

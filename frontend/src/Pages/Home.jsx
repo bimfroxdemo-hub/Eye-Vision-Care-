@@ -11,6 +11,16 @@ import TeamIntro from "../components/TeamIntro";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
+const seoData = {
+  title: "Best Eye Clinic in Surat, Vesu, Bhestan & Near Al Catoon | Eye Vision Care",
+  description:
+    "Eye Vision Care is your trusted eye clinic in Surat, Vesu, Bhestan, Aarni, and near Al Catoon for eye checkup, cataract treatment, LASIK consultation, contact lenses, and advanced vision care.",
+  keywords:
+    "eye clinic in Surat, eye specialist in Vesu, eye doctor in Bhestan, eye care near Al Catoon, best eye hospital in Surat, cataract treatment in Vesu, LASIK consultation in Bhestan, contact lens clinic in Surat, eye checkup in Aarni, eye care near Bhestan, eye clinic near Al Catoon",
+  url: "https://eyevissioncare.in/",
+  image: "/fevicon.png",
+};
+
 const Home = () => {
   const aboutRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -23,6 +33,82 @@ const Home = () => {
 
   return (
     <>
+      <Seo
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        url={seoData.url}
+        image={seoData.image}
+        businessName="Eye Vision Care"
+        areaServed={["Surat", "Vesu", "Bhestan", "Aarni", "Al Catoon"]}
+        telephone="+91-XXXXXXXXXX"
+        faq={[
+          {
+            question: "Do you provide eye checkups in Surat and nearby areas?",
+            answer: "Yes, Eye Vision Care provides comprehensive eye checkups, advanced vision testing, and treatment for patients in Surat, Vesu, Bhestan, Aarni, and near Al Catoon.",
+          },
+          {
+            question: "Can I get cataract treatment or LASIK consultation near Al Catoon?",
+            answer: "Yes, we offer cataract treatment guidance, LASIK consultation, and personalized vision care for patients across Surat and nearby localities.",
+          },
+          {
+            question: "Do you help with contact lens fitting and eye care for families?",
+            answer: "We offer contact lens consultation, pediatric eye care, senior eye care, and family-friendly services tailored to different vision needs.",
+          },
+        ]}
+        schema={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "MedicalBusiness",
+              name: "Eye Vision Care",
+              image: seoData.image,
+              description: seoData.description,
+              url: seoData.url,
+              telephone: "+91-XXXXXXXXXX",
+              areaServed: ["Surat", "Vesu", "Bhestan", "Aarni", "Al Catoon"],
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Surat",
+                addressRegion: "Gujarat",
+                addressCountry: "IN",
+              },
+              openingHours: ["Mo-Sa 09:00-20:00"],
+              medicalSpecialty: ["Eye Care", "Ophthalmology"],
+              priceRange: "$$",
+            },
+            {
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "Do you provide eye checkups in Surat and nearby areas?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Yes, Eye Vision Care provides comprehensive eye checkups, advanced vision testing, and treatment for patients in Surat, Vesu, Bhestan, Aarni, and near Al Catoon.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Can I get cataract treatment or LASIK consultation near Al Catoon?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Yes, we offer cataract treatment guidance, LASIK consultation, and personalized vision care for patients across Surat and nearby localities.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Do you help with contact lens fitting and eye care for families?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "We offer contact lens consultation, pediatric eye care, senior eye care, and family-friendly services tailored to different vision needs.",
+                  },
+                },
+              ],
+            },
+          ],
+        }}
+      />
       <Hero />
       <TeamIntro />
       <Stats />
